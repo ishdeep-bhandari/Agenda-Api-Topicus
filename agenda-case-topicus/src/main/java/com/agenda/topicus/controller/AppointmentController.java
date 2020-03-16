@@ -179,6 +179,7 @@ public class AppointmentController {
 		try {
 		Date starttimelot = timeslotparser.parse("07:00:00");
 	    Date endtimelot = timeslotparser.parse("18:30:00");
+	    
 	    if (appointment.getStartTime().compareTo(starttimelot) < 0 || appointment.getEndTime().compareTo(endtimelot) > 0) throw new IllegalArgumentException("Time slots must be between 07:00:00 and 18:00:00");
 		
 	    }catch (ParseException e){
@@ -195,7 +196,7 @@ public class AppointmentController {
 	    	else {
 	    		
 	    		for (int i = 0; i< appstarttimesAddition.size(); i++){
-	    		if (appstarttimesAddition.get(i).compareTo(appointment.getStartTime()) == 0) throw new IllegalArgumentException("Time slot being used by the owner" );
+	    		if (appstarttimesAddition.get(i).compareTo(appointment.getStartTime()) == 0) throw new IllegalArgumentException("Time slot being used by the additional owner" );
 	    		}
 	    		
 	    	}
